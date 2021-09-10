@@ -14,12 +14,12 @@ export const loseSummonerColor = '#e2b6b3'
 export const winTeamColor = '#d8e4ec'
 export const winSummonerColor = '#a3cfec'
 
-export const teamName = {
+export const teamName: { [key: number]: string } = {
 	100: '블루팀',
 	200: '레드팀',
 }
 
-export const multiKillNameList = {
+export const multiKillNameList: { [key: number]: string } = {
 	2: '더블킬',
 	3: '트리플킬',
 	4: '쿼드라킬',

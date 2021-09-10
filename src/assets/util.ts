@@ -13,38 +13,38 @@ import {
 	SHOW_POST_FORM_MODAL,
 } from '../store/mutation-type'
 
-const util = {
-	$getSummonerIcon(key) {
+const util: { [index: string]: any } = {
+	$getSummonerIcon(key: string) {
 		return staticImageAPI + staticURL.summonerIcon + key + '.png'
 	},
 
-	$getChampIcon(key) {
+	$getChampIcon(key: string) {
 		return staticImageAPI + staticURL.champion + key + '.png'
 	},
 
-	$getSpellIcon(key) {
+	$getSpellIcon(key: string) {
 		return staticImageAPI + staticURL.spell + key + '.png'
 	},
 
-	$getItemIcon(key) {
+	$getItemIcon(key: string) {
 		return staticImageAPI + staticURL.item + key + '.png'
 	},
 
-	$getSpellInfo(id) {
+	$getSpellInfo(id: string) {
 		return this.$store.getters.spellInfo(id)
 	},
 
-	$getItemInfo(id) {
+	$getItemInfo(id: string) {
 		return this.$store.getters.itemInfo(id)
 	},
 
-	$getUpNearNumber(num) {
+	$getUpNearNumber(num: number) {
 		if (typeof num != 'number') return 0
 		const val = 10 ** (num.toString().length - 2)
 		return Math.ceil(num / val) * val
 	},
 
-	$getTeamName(value) {
+	$getTeamName(value: number) {
 		return teamName[value]
 	},
 
@@ -60,7 +60,7 @@ const util = {
 		})
 	},
 
-	$closePostFormModal(flag) {
+	$closePostFormModal(flag: boolean) {
 		this.$store.commit(CLOSE_POST_FORM_MODAL, { flag })
 	},
 

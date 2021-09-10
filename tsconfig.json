@@ -4,7 +4,7 @@
     "module": "esnext",
     // 점진적 적용을 위해 잠시 끈다
     "strict": false, 
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     // 
     "allowJs": true,
     // 

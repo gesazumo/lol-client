@@ -4,7 +4,7 @@ import router from '@/routes/index'
 import vuetify from './plugins/vuetify'
 import store from '@/store/index'
 import util from '@/assets/util'
-import * as filters from '@/filters/filters'
+import filters from '@/filters/filters'
 import urlPlugin from '@/plugins/urlPlugin'
 import modalPlugin from '@/plugins/modalPlugin'
 import chartPlugin from '@/plugins/chartPlugin'
@@ -15,6 +15,7 @@ import loadingPlugin from './plugins/loadingPlugin'
 import NoContent from './components/NoContent.vue'
 
 import '@/assets/css/common.css'
+
 
 Vue.config.productionTip = false
 Object.keys(filters).forEach(key => {
