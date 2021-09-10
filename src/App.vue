@@ -1,29 +1,29 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-  </div>
+  <v-app>
+    <div class="browser">
+      <search-bar />
+      <router-view></router-view>
+    </div>
+    <post-form-modal />
+  </v-app>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+<script>
+import SearchBar from "@/components/SearchBar.vue";
+import { mapActions } from "vuex";
+import PostFormModal from "./components/modal/PostFormModal.vue";
 
-export default Vue.extend({
+export default {
   name: "App",
-  components: {
-    HelloWorld,
+  components: { SearchBar, PostFormModal },
+  data() {
+    return {};
   },
-});
+  methods: {
+    ...mapActions(["callInitApi"]),
+  },
+  created() {
+    this.callInitApi();
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

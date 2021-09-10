@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "forceConsistentCasingInFileNames": false,
+      "paths": {
+        "~/*": ["./*"],
+        "@/*": ["./src/*"],
+      }
+    },
+    // 경로제외할 파일들
+    "exclude": [
+      "node_modules",
+      "dist"
+    ]
+}

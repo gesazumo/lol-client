@@ -1,0 +1,137 @@
+.browser {
+	padding: 10px 135px;
+}
+
+.homeLogo {
+    width: 80px;
+    height: 100px;
+}
+
+.section {
+	outline: solid;
+	outline-color: dodgerblue;
+	padding-top: 0;
+	padding-right: 0;
+	padding-left: 0;
+	background-color: rgb(241, 241, 241);
+}
+
+.section .title {
+	background-color: dodgerblue;
+	color: floralwhite;
+	font-size: 1rem !important;
+    display: flex;
+    justify-content: space-between;
+}
+
+.addPostButton {
+    background: rgb(255, 109, 109);
+    padding: 0px 5px;
+    border-radius: 5px;
+    font-size: 0.9rem 
+}
+
+.section .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.post {
+    background: rgb(0, 0, 0);
+    width:380px;
+    height:230px;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+.post .time {
+    color:#ed9c28;
+
+}
+.post .title {
+    color:#fffbf5;
+    background: rgb(0, 0, 0);
+    font: bold;
+    margin-bottom: 20px;
+
+}
+
+.post .textRow {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.post .body {
+    color:#dddddd;
+    background: rgb(0, 0, 0);
+    height: 100px;
+}
+
+.post .summoner {
+    color:#fffbf5;
+    background: rgb(0, 0, 0);
+    font: bold;
+}
+
+.post .expire {
+    color:rgb(163, 163, 163);
+    background: rgb(0, 0, 0);
+    font-size: 0.6rem;
+}
+
+.postFormModal {
+    background: rgb(246, 246, 246);
+}
+
+.selectSection {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.selectSection .selectBox {
+    width: 100px;
+}
+
+.modalTitle {
+    background: coral;
+    border: 1px rgb(255, 72, 0) solid;
+    text-align: center;
+}
+
+.filterBox {
+    padding: 5px;
+    display: flex;
+    gap: 5px;
+}
+
+.filterBox .selectBox {
+    width: 100px;
+}
+
+.v-text-field.v-text-field--solo .v-input__control {
+    min-height: 36px;
+    padding: 0;
+}
+
+.v-text-field.v-text-field--enclosed .v-text-field__details {
+    padding-top: 0px;
+    margin-bottom: 0px;
+}
+
+@media screen and (min-width: 1800px) {
+    .section .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .browser {
+        padding: 0;
+    }
+}

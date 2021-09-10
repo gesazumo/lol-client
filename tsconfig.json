@@ -2,7 +2,12 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "strict": true,
+    // 점진적 적용을 위해 잠시 끈다
+    "strict": false, 
+    "noImplicitAny": false,
+    // 
+    "allowJs": true,
+    // 
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
@@ -12,7 +17,8 @@
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
-      "webpack-env"
+      "webpack-env",
+      "vuetify"
     ],
     "paths": {
       "@/*": [
