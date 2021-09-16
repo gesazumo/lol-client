@@ -13,7 +13,9 @@
 					<th class="head" :style="{ width: '12%' }">피해량</th>
 					<th class="head" :style="{ width: '8%' }">와드</th>
 					<th class="head" :style="{ width: '8%' }">CS</th>
-					<th class="head text-left" :style="{ width: '10%' }">아이템</th>
+					<th class="head text-left" :style="{ width: '10%' }">
+						아이템
+					</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,18 +29,31 @@
 						<div class="portraitCell">
 							<img
 								class="portrait"
-								:src="getChampIcon + championInfo(team1.championId).id + '.png'"
+								:src="
+									getChampIcon +
+									championInfo(team1.championId).id +
+									'.png'
+								"
 							/>
-							<div class="level">{{ team1.stats.champLevel }}</div>
+							<div class="level">
+								{{ team1.stats.champLevel }}
+							</div>
 						</div>
 						<div class="spellCell">
 							<spell-tool-tip :spellId="team1.spell1Id">
 								<template v-slot:temp>
-									<div :style="{ width: '20px', height: '20px' }">
+									<div
+										:style="{
+											width: '20px',
+											height: '20px',
+										}"
+									>
 										<img
 											class="spell"
 											:src="
-												getSpellIcon + spellInfo(team1.spell1Id).id + '.png'
+												getSpellIcon +
+												spellInfo(team1.spell1Id).id +
+												'.png'
 											"
 										/>
 									</div>
@@ -46,11 +61,18 @@
 							</spell-tool-tip>
 							<spell-tool-tip :spellId="team1.spell2Id">
 								<template v-slot:temp>
-									<div :style="{ width: '20px', height: '20px' }">
+									<div
+										:style="{
+											width: '20px',
+											height: '20px',
+										}"
+									>
 										<img
 											class="spell"
 											:src="
-												getSpellIcon + spellInfo(team1.spell2Id).id + '.png'
+												getSpellIcon +
+												spellInfo(team1.spell2Id).id +
+												'.png'
 											"
 										/>
 									</div>
@@ -67,7 +89,9 @@
 								src="https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/Ahri.png"
 							/>
 						</div>
-						<div :style="{ width: '50%' }">{{ team1.player.summonerName }}</div>
+						<div :style="{ width: '50%' }">
+							{{ team1.player.summonerName }}
+						</div>
 					</td>
 
 					<td class="cell">Silver 3</td>
@@ -82,13 +106,14 @@
 						</div>
 						<div class="kdaText2">
 							<span
-								>{{ team1.stats.kills }}/{{ team1.stats.deaths }}/{{
-									team1.stats.assists
-								}}</span
+								>{{ team1.stats.kills }}/{{
+									team1.stats.deaths
+								}}/{{ team1.stats.assists }}</span
 							>
 							({{
 								(
-									((team1.stats.kills + team1.stats.assists) / team1TotalKill) *
+									((team1.stats.kills + team1.stats.assists) /
+										team1TotalKill) *
 									100
 								).toFixed(0)
 							}}%)
@@ -107,24 +132,44 @@
 								<template v-slot:activator="{ on, attrs }">
 									<div v-bind="attrs" v-on="on">
 										<div>
-											{{ team1.stats.visionWardsBoughtInGame | nullToZero }}
+											{{
+												team1.stats
+													.visionWardsBoughtInGame
+													| nullToZero
+											}}
 										</div>
 										<div>
-											{{ team1.stats.wardsPlaced | nullToZero }} /
-											{{ team1.stats.wardsKilled | nullToZero }}
+											{{
+												team1.stats.wardsPlaced
+													| nullToZero
+											}}
+											/
+											{{
+												team1.stats.wardsKilled
+													| nullToZero
+											}}
 										</div>
 									</div>
 								</template>
 								<div>
 									<div>
 										제어와드 :
-										{{ team1.stats.visionWardsBoughtInGame | nullToZero }}
+										{{
+											team1.stats.visionWardsBoughtInGame
+												| nullToZero
+										}}
 									</div>
 									<div>
-										와드설치 : {{ team1.stats.wardsPlaced | nullToZero }}
+										와드설치 :
+										{{
+											team1.stats.wardsPlaced | nullToZero
+										}}
 									</div>
 									<div>
-										와드제거 : {{ team1.stats.wardsKilled | nullToZero }}
+										와드제거 :
+										{{
+											team1.stats.wardsKilled | nullToZero
+										}}
 									</div>
 								</div>
 							</v-tooltip>
@@ -142,11 +187,18 @@
 								<template v-slot:temp>
 									<img
 										class="item"
-										:src="getItemIcon + team1.stats['item' + index] + '.png'"
+										:src="
+											getItemIcon +
+											team1.stats['item' + index] +
+											'.png'
+										"
 									/>
 								</template>
 							</item-tool-tip>
-							<div class="item" v-if="team1.stats['item' + index] == 0"></div>
+							<div
+								class="item"
+								v-if="team1.stats['item' + index] == 0"
+							></div>
 						</div>
 					</td>
 				</tr>
@@ -171,7 +223,9 @@
 					<th class="head" :style="{ width: '12%' }">피해량</th>
 					<th class="head" :style="{ width: '8%' }">와드</th>
 					<th class="head" :style="{ width: '8%' }">CS</th>
-					<th class="head text-left" :style="{ width: '10%' }">아이템</th>
+					<th class="head text-left" :style="{ width: '10%' }">
+						아이템
+					</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -185,18 +239,31 @@
 						<div class="portraitCell">
 							<img
 								class="portrait"
-								:src="getChampIcon + championInfo(team2.championId).id + '.png'"
+								:src="
+									getChampIcon +
+									championInfo(team2.championId).id +
+									'.png'
+								"
 							/>
-							<div class="level">{{ team2.stats.champLevel }}</div>
+							<div class="level">
+								{{ team2.stats.champLevel }}
+							</div>
 						</div>
 						<div class="spellCell">
 							<spell-tool-tip :spellId="team2.spell1Id">
 								<template v-slot:temp>
-									<div :style="{ width: '20px', height: '20px' }">
+									<div
+										:style="{
+											width: '20px',
+											height: '20px',
+										}"
+									>
 										<img
 											class="spell"
 											:src="
-												getSpellIcon + spellInfo(team2.spell1Id).id + '.png'
+												getSpellIcon +
+												spellInfo(team2.spell1Id).id +
+												'.png'
 											"
 										/>
 									</div>
@@ -204,11 +271,18 @@
 							</spell-tool-tip>
 							<spell-tool-tip :spellId="team2.spell2Id">
 								<template v-slot:temp>
-									<div :style="{ width: '20px', height: '20px' }">
+									<div
+										:style="{
+											width: '20px',
+											height: '20px',
+										}"
+									>
 										<img
 											class="spell"
 											:src="
-												getSpellIcon + spellInfo(team2.spell2Id).id + '.png'
+												getSpellIcon +
+												spellInfo(team2.spell2Id).id +
+												'.png'
 											"
 										/>
 									</div>
@@ -240,13 +314,14 @@
 						</div>
 						<div class="kdaText2">
 							<span
-								>{{ team2.stats.kills }}/{{ team2.stats.deaths }}/{{
-									team2.stats.assists
-								}}</span
+								>{{ team2.stats.kills }}/{{
+									team2.stats.deaths
+								}}/{{ team2.stats.assists }}</span
 							>
 							({{
 								(
-									((team2.stats.kills + team2.stats.assists) / team2TotalKill) *
+									((team2.stats.kills + team2.stats.assists) /
+										team2TotalKill) *
 									100
 								).toFixed(0)
 							}}%)
@@ -265,24 +340,44 @@
 								<template v-slot:activator="{ on, attrs }">
 									<div v-bind="attrs" v-on="on">
 										<div>
-											{{ team2.stats.visionWardsBoughtInGame | nullToZero }}
+											{{
+												team2.stats
+													.visionWardsBoughtInGame
+													| nullToZero
+											}}
 										</div>
 										<div>
-											{{ team2.stats.wardsPlaced | nullToZero }} /
-											{{ team2.stats.wardsKilled | nullToZero }}
+											{{
+												team2.stats.wardsPlaced
+													| nullToZero
+											}}
+											/
+											{{
+												team2.stats.wardsKilled
+													| nullToZero
+											}}
 										</div>
 									</div>
 								</template>
 								<div>
 									<div>
 										제어와드 :
-										{{ team2.stats.visionWardsBoughtInGame | nullToZero }}
+										{{
+											team2.stats.visionWardsBoughtInGame
+												| nullToZero
+										}}
 									</div>
 									<div>
-										와드설치 : {{ team2.stats.wardsPlaced | nullToZero }}
+										와드설치 :
+										{{
+											team2.stats.wardsPlaced | nullToZero
+										}}
 									</div>
 									<div>
-										와드제거 : {{ team2.stats.wardsKilled | nullToZero }}
+										와드제거 :
+										{{
+											team2.stats.wardsKilled | nullToZero
+										}}
 									</div>
 								</div>
 							</v-tooltip>
@@ -300,11 +395,18 @@
 								<template v-slot:temp>
 									<img
 										class="item"
-										:src="getItemIcon + team2.stats['item' + index] + '.png'"
+										:src="
+											getItemIcon +
+											team2.stats['item' + index] +
+											'.png'
+										"
 									/>
 								</template>
 							</item-tool-tip>
-							<div class="item" v-if="team2.stats['item' + index] == 0"></div>
+							<div
+								class="item"
+								v-if="team2.stats['item' + index] == 0"
+							></div>
 						</div>
 					</td>
 				</tr>

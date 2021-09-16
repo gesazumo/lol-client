@@ -1,3 +1,4 @@
+import { AxiosResponse } from 'axios'
 import { instance, staticInstance } from './index'
 
 const url = {
@@ -8,24 +9,30 @@ const url = {
 	queues: 'queues.json',
 }
 
-export const fetchFindUser = summonerName => {
+export const fetchFindUser = (summonerName: string): Promise<AxiosResponse> => {
 	return instance.get(url.find + summonerName)
 }
 
-export const fetchFindUserRankInfo = id => {
+export const fetchFindUserRankInfo = (id: string): Promise<AxiosResponse> => {
 	return instance.get(`${url.info}${id}`)
 }
 
-export const fetchFindRecentGame = (id, beginIndex, endIndex) => {
+export const fetchFindRecentGame = (
+	id: string,
+	beginIndex: number,
+	endIndex: number,
+): Promise<AxiosResponse> => {
 	return instance.get(`${url.recentGame}${id}`, {
 		params: { beginIndex, endIndex },
 	})
 }
 
-export const fetchFindRecentGameSummary = id => {
+export const fetchFindRecentGameSummary = (
+	id: string,
+): Promise<AxiosResponse> => {
 	return instance.get(`${url.summary}${id}`)
 }
 
-export const fetchQueues = () => {
+export const fetchQueues = (): Promise<AxiosResponse> => {
 	return staticInstance.get(`${url.queues}`)
 }

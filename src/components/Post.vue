@@ -12,15 +12,16 @@
 	</div>
 </template>
 
-<script>
-export default {
-	name: 'post',
+<script lang="ts">
+import { PostType } from '@/models/postType'
+import Vue, { PropType } from 'vue'
+
+export default Vue.extend({
+	name: 'Post',
 	props: {
 		postData: {
-			type: Object,
+			type: Object as PropType<PostType>,
 		},
 	},
-}
+})
 </script>
-
-<style></style>

@@ -19,7 +19,9 @@
 						<img
 							class="portrait"
 							:src="
-								getChampIcon + championInfo(participant.championId).id + '.png'
+								getChampIcon +
+								championInfo(participant.championId).id +
+								'.png'
 							"
 						/>
 					</div>
@@ -27,11 +29,19 @@
 					<div :style="{ float: 'left' }">
 						<spell-tool-tip :spellId="participant.spell1Id">
 							<template v-slot:temp>
-								<div :style="{ width: '35px', height: '35px', padding: '1px' }">
+								<div
+									:style="{
+										width: '35px',
+										height: '35px',
+										padding: '1px',
+									}"
+								>
 									<img
 										class="spell"
 										:src="
-											getSpellIcon + spellInfo(participant.spell1Id).id + '.png'
+											getSpellIcon +
+											spellInfo(participant.spell1Id).id +
+											'.png'
 										"
 									/>
 								</div>
@@ -39,11 +49,19 @@
 						</spell-tool-tip>
 						<spell-tool-tip :spellId="participant.spell2Id">
 							<template v-slot:temp>
-								<div :style="{ width: '35px', height: '35px', padding: '1px' }">
+								<div
+									:style="{
+										width: '35px',
+										height: '35px',
+										padding: '1px',
+									}"
+								>
 									<img
 										class="spell"
 										:src="
-											getSpellIcon + spellInfo(participant.spell2Id).id + '.png'
+											getSpellIcon +
+											spellInfo(participant.spell2Id).id +
+											'.png'
 										"
 									/>
 								</div>
@@ -51,13 +69,25 @@
 						</spell-tool-tip>
 					</div>
 					<div :style="{ float: 'left' }">
-						<div :style="{ width: '35px', height: '35px', padding: '1px' }">
+						<div
+							:style="{
+								width: '35px',
+								height: '35px',
+								padding: '1px',
+							}"
+						>
 							<img
 								class="lune"
 								:src="`https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/Ahri.png`"
 							/>
 						</div>
-						<div :style="{ width: '35px', height: '35px', padding: '1px' }">
+						<div
+							:style="{
+								width: '35px',
+								height: '35px',
+								padding: '1px',
+							}"
+						>
 							<img
 								class="lune"
 								:src="`https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/Ahri.png`"
@@ -86,7 +116,8 @@
 					<span class="font-weight-bold"
 						>{{
 							(
-								(participant.stats.kills + participant.stats.assists) /
+								(participant.stats.kills +
+									participant.stats.assists) /
 								participant.stats.deaths
 							).toFixed(2)
 						}}:1</span
@@ -111,7 +142,9 @@
 				<div class="font-weight-light" :style="grayFont">
 					레벨{{ participant.stats.champLevel }}
 				</div>
-				<div class="font-weight-light" :style="grayFont">89 (3.8) CS</div>
+				<div class="font-weight-light" :style="grayFont">
+					89 (3.8) CS
+				</div>
 				<div>킬관여 44%</div>
 				<div class="font-weight-light" :style="grayFont">매치 평균</div>
 				<div>Silver 4</div>
@@ -127,7 +160,9 @@
 								<img
 									class="spell"
 									:src="
-										getItemIcon + participant.stats['item' + index] + '.png'
+										getItemIcon +
+										participant.stats['item' + index] +
+										'.png'
 									"
 								/>
 							</template>
@@ -150,11 +185,16 @@
 							<img
 								class="spell"
 								:style="
-									i.participantId == participantIdentities.participantId
+									i.participantId ==
+									participantIdentities.participantId
 										? { borderRadius: '100%' }
 										: {}
 								"
-								:src="getChampIcon + championInfo(i.championId).id + '.png'"
+								:src="
+									getChampIcon +
+									championInfo(i.championId).id +
+									'.png'
+								"
 							/>
 						</div>
 						<div>{{ i.player.summonerName | textCut(6) }}</div>
@@ -170,11 +210,16 @@
 							<img
 								class="spell"
 								:style="
-									i.participantId == participantIdentities.participantId
+									i.participantId ==
+									participantIdentities.participantId
 										? { borderRadius: '100%' }
 										: {}
 								"
-								:src="getChampIcon + championInfo(i.championId).id + '.png'"
+								:src="
+									getChampIcon +
+									championInfo(i.championId).id +
+									'.png'
+								"
 							/>
 						</div>
 						<div>{{ i.player.summonerName | textCut(6) }}</div>
