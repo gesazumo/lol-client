@@ -16,7 +16,6 @@ import NoContent from './components/NoContent.vue'
 
 import '@/assets/css/common.css'
 
-
 Vue.config.productionTip = false
 Object.keys(filters).forEach(key => {
 	Vue.filter(key, filters[key])
